@@ -2,7 +2,14 @@
 
 require_relative '../lib/fractional_knaps_prob'
 
-var = describe '#razao' do
+def method_name
+  array = []
+  max_weight = 50
+
+  expect(razao(array, max_weight)).to eq(0)
+end
+
+def method_name
   it 'calculates the maximum profit for a given set of items' do
     array = [
       Item.new(20, 100),
@@ -21,12 +28,7 @@ var = describe '#razao' do
     expect(razao(array, max_weight)).to eq(50)
   end
 
-  it 'returns 0 when the list of items is empty' do
-    array = []
-    max_weight = 50
-
-    expect(razao(array, max_weight)).to eq(0)
-  end
+  it 'returns 0 when the list of items is empty', &method(:method_name)
 
   it 'calculates the maximum profit regardless of the order of items' do
     array = [
@@ -38,5 +40,6 @@ var = describe '#razao' do
 
     expect(razao(array, max_weight)).to eq(240)
   end
-
 end
+
+var = describe '#razao', &method(:method_name)
