@@ -119,6 +119,7 @@ GEM
     mini_portile2 (2.8.2)
     minitest (5.18.0)
     msgpack (1.7.1)
+    mysql2 (0.5.3)
     net-imap (0.3.4)
       date
       net-protocol
@@ -250,11 +251,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord
   bootsnap
   capybara
   debug
   importmap-rails
   jbuilder
+  mysql2
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
   rspec-rails
