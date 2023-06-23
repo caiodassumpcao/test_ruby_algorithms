@@ -1,37 +1,37 @@
-#Como eu crio um arquivo de teste(group_words_spec.rb) para o arquivo group_words.rb. Segue arquivo group_words.rb >
-#Group words with same set of characters - Agrupar palavras com o mesmo conjunto de caracteres
+# frozen_string_literal: true
 
-#entrada - palavras[] = { "pode", "aluno", "alunos", "cachorro", "studentssess", "deus", "gato", "agir",
-#"tab", "morcego", "fluxo", "lobo", "cordeiros", "amy", "inhame", "bálsamo", "looped", "poodle"};
-
-
-
-def get_key(str)
-  max_char = 26
-  visited = Array.new(max_char, false)
-
-  str.each_char do |char|
-    visited[char.ord - 'a'.ord] = true #Adiciona "true" para cada char da string
-  end
-
-  key = ""
-  for j in 0...max_char
-    if visited[j]
-      #('a'.ord) -> retorna indice correspondente da letra do alfabeto
-      #(+ j) -> representa o indice da letra no array visited
-      #().chr -> Converte o valor do index em caractere.
-      key += ('a'.ord + j).chr
-    end
-  end
-
-  return key
+def array_intervalo(a, b)
+  (a..b).to_a
 end
 
-def word_same_char(words)
-  hash = Hash.new { |h, k| h[k] = [] } #Cria novo hash de chave k e valor vazio
+def divisor_comum(x, y, w)
+  num_div = []
 
-  words.each_with_index do |word, i| #Intera sobre cada elemento do array Word e seu index i
-    key = get_key(word) #pega a key da palabra word
-    hash[key] << i #Adiciona a chave key como novo Hash(se ñ existir) e um indice de valor i
+  if x > y
+    x, y = y, x
+  elsif x == y
+    return []
   end
 
+  intervalo_2 = array_intervalo(x, y)
+
+  intervalo_2.each do |num|
+    num_div << num if num != x && num != y && (num % w).zero?
+  end
+
+  num_div
+end
+
+print 'Digite o primeiro número do intervalo: '
+x = gets.chomp.to_i
+print 'Digite o último número do intervalo: '
+y = gets.chomp.to_i
+print 'Digite o divisor comum: '
+w = gets.chomp.to_i
+
+resultado = divisor_comum(x, y, w)
+if resultado.empty?
+  puts 'Não existem números dentro do intervalo'
+else
+  puts "Números divisíveis por #{w} entre #{x} e #{y}: #{resultado.inspect}"
+end
