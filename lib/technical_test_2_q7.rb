@@ -2,6 +2,7 @@
 
 # RESPOSTA:
 
+# Os models lidam com a lógica de negócio e manipulação dos dados, os controllers gerenciam as requisições e respostas HTTP, e as views são responsáveis pela interface gráfica da aplicação. Essas camadas trabalham em conjunto para criar uma aplicação web funcional, escalável e de fácil manutenção
 # Em um projeto Ruby on Rails com a estrutura padrão de arquivos, os models, controllers e views devem estar localizados nas seguintes pastas:
 # 1°.Models: Os arquivos de model são geralmente colocados na pasta app/models. Cada model é definido em seu próprio arquivo dentro dessa pasta
 # 2°.Controllers: Os arquivos de controller são normalmente colocados na pasta app/controllers. Cada controller é definido em seu próprio arquivo dentro dessa pasta
