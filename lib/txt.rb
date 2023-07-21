@@ -35,3 +35,5 @@ if resultado.empty?
 else
   puts "Números divisíveis por #{w} entre #{x} e #{y}: #{resultado.inspect}"
 end
+
+tedasdas ewqe
