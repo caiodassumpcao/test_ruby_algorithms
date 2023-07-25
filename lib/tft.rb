@@ -10,8 +10,8 @@ class TFTProbabilidade
     }
 
     @probabilidades = {
-      1 => { 1 => 1.0 },
-      2 => { 1 => 1.0 },
+      1 => { 1 => 1.0, 2 => 0, 3 => 0, 4 => 0, 5 => 0 },
+      2 => { 1 => 1.0, 2 => 0, 3 => 0, 4 => 0, 5 => 0 },
       3 => { 1 => 0.7, 2 => 0.25, 3 => 0.05 },
       4 => { 1 => 0.5, 2 => 0.35, 3 => 0.15 },
       5 => { 1 => 0.5, 2 => 0.35, 3 => 0.15 },
@@ -41,7 +41,7 @@ end
 custo_1 = ["Cassiopeia", "Chogath", "Irelia", "Jhin", "Kayle", "Malzahar", "Maokai", "Orianna", "Poppy", "Renekton", "Samira", "Tristana", "Viego"]
 custo_2 = ["Ashe", "Galio", "Jinx", "Kassadin", "Kled", "Sett", "Soraka", "Swain", "Thaliyah", "Teemo", "Vi", "Warwick", "Zed"]
 custo_3 = ["Akshan", "Darius", "Ekko", "Garen", "Jayce", "Kalista", "Karma", "Katarina", "Lissandra", "Reksai", "Sona", "Taric", "Velkoz"]
-custo_4 = ["Aphelios", "Azir", "Gwen", "JarvanIV", "Kaisa", "Lux", "Nasus", "Sejuani", "Shen", "Urgot", "Yasou", "Zeri"]
+custo_4 = ["Aphelios", "Aazir", "Gwen", "JarvanIV", "Kaisa", "Lux", "Nasus", "Sejuani", "Shen", "Urgot", "Yasou", "Zeri"]
 custo_5 = ["Aatrox", "Ahri", "Belveth", "Heimerdinger", "Ksant", "Ryze", "Senna", "Sion"]
 
 tft_probabilidade = TFTProbabilidade.new
