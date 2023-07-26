@@ -1,0 +1,21 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: caitole123
+  host: localhost
+
+development:
+  <<: *default
+  database: netflix_api_development
+
+test:
+  <<: *default
+  database: netflix_api_test
+
+production:
+  <<: *default
+  database: netflix_api_production
+  username: root
+  password: caitole123
