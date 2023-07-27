@@ -10,7 +10,7 @@ ActiveRecord::Base.establish_connection(
   host: 'localhost',
   username: 'root',
   password: 'caitole123',
-  database: 'ruby_teste_2_q34_db'
+  database: 'ruby_teste_2_q35_db'
 )
 
 # Definição das classes e migrações de banco de dados (Migrações)
