@@ -6,7 +6,7 @@ ActiveRecord::Base.establish_connection(
   host: 'localhost',
   username: 'root',
   password: 'caitole123',
-  database: 'ruby_absence_calculator_8_db'
+  database: 'ruby_absence_calculator_12_db'
 )
 
 class CreateUsers < ActiveRecord::Migration[7.0]
@@ -34,18 +34,14 @@ class User < ApplicationRecord
 end
 
 User.create(name: "Maquinas Primarias", carga_horaria: 60, hora_aula: 280)
+User.create(name: "Calculo 1", carga_horaria: 60, hora_aula: 140)
 
 materias = User.materia
 
 materias.each do |cadeira|
-  print "Cadeira:"
-  print cadeira.name
-  print " "
-  print "/ Carga horaria:"
-  print cadeira.carga_horaria
-  print " "
-  print "/ Hora aula:"
-  print cadeira.hora_aula
+  print "Cadeira: #{cadeira.name} / Carga horaria: #{cadeira.carga_horaria} / Hora aula: #{cadeira.hora_aula} / Total de Faltas: "
+  print (cadeira.carga_horaria.to_f / cadeira.hora_aula * 0.25)
+  puts
 end
 
 #puts "Qual a carga horaria da cadeira em horas?"
@@ -54,9 +50,9 @@ end
 #puts "Quantos minutos duram um dia de aula?"
 #hora_aula = gets.chomp.to_i
 
-#total_aulas = carga_horaria / hora_aula
+total_aulas = carga_horaria / hora_aula
 
-#total_faltas = (total_aulas * 0.25).floor
+total_faltas = (total_aulas * 0.25).floor
 
-#puts "Voce pode ter um total de #{total_faltas} faltas."
+puts "Voce pode ter um total de #{total_faltas} faltas."
 
