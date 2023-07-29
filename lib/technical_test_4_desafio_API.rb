@@ -37,10 +37,10 @@
 # 3- Modelo de dados
 # OK 3.1- Crie um modelo para representar os títulos do Netflix -> você pode criar um arquivo de migração para criar uma tabela "titles" com os campos relevantes, como "id", "title", "genre", "year", "country", "published_at" e "description". Use o comando rails generate migration CreateTitles
 # PD 3.2- Execute o comando "rails db:migrate"
-# OK 3.3- Defina as validações necessárias para o modelo Title, como a garantia de que não haja duplicidade de registros
-# OK 3.3-> Necessário criar e editar arquivo app/models/title.rb
+# 3.3- Defina as validações necessárias para o modelo Title, como a garantia de que não haja duplicidade de registros
+# 3.3-> Necessário criar e editar arquivo app/models/title.rb
 # 4- Importação do CSV
-# OK 4.1- Você pode adicionar uma rota no arquivo config/routes.rb, como post '/import', to: 'titles#import_csv'
+# 4.1- Você pode adicionar uma rota no arquivo config/routes.rb, como post '/import', to: 'titles#import_csv'
 # 4.2- Crie um controlador "TitlesController" com uma ação "import_csv" correspondente
 # 4.3- Na ação "import_csv", faça a leitura do arquivo CSV e salve os dados no banco de dados
 # 5- Listagem de titulos
@@ -53,3 +53,8 @@
 # 6.2- Utilizar RSpec ou MiniTest
 # 6.3- Certificar de testar casos de sucesso e de fakha para diferentes funcionalidades da API
 
+class desafio
+
+end
+
+def teste()
