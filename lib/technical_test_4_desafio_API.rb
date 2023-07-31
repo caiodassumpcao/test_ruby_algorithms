@@ -50,17 +50,20 @@
 # OK    4.3.3- Verificar se a rota url especificada no arquivo "config/routes.rb" esta recebendo o arquivo CSV definido pela url no formulario Front-end
 # 5- Formulario Front-end
 #   5.1-
-# 6- Listagem de titulos
+# OK 6- Listagem de titulos
 # OK  6.1- Crie um endpoint para listar os títulos, seguindo o padrão RESTful. Por exemplo, você pode adicionar uma rota no arquivo config/routes.rb, como get '/titles', to: 'titles#index'.
-#   6.2- Crie uma ação "index" no controlador "TitlesController" correspondente
+# OK  6.2- Crie uma ação "index" no controlador "TitlesController" correspondente
 # OK    6.2.1- Definir a açao "index" que busca todos os titulos no banco de dados e armazena em uma variavel de instancia para uso na view
 # OK    6.2.2- Crie a view correspondente a açao "index". Criandondo arquivo "app/views/titles/index.html.erb"
-#   6.3- Na ação "index", recupere os títulos dos bancos de dados, aplicando as filtragens necessárias (por ano de lançamento, genero, pais, etc)
+# OK  6.3- Na ação "index", recupere os títulos dos bancos de dados, aplicando as filtragens necessárias (por ano de lançamento, genero, pais, etc)
 # OK    6.3.1- Verificar se na açao "index" do controlador "titles_controller" tem parametros de filtragem enviados na solicitaçao GET.
-#     6.3.2-
-#   6.4- Retorne a lista de titulos como resposta, em forma de JSON
+# OK  6.4- Retorne a lista de titulos como resposta, em forma de JSON
+# OK    6.4.1- Usar metodo "render" no "titles_controller" para renderizar a lista como um JSON
+# OK    6.4.2- Ajustar os campos retornados no JSON depois do parametro "render"
+
 # 7- Testes
 #   7.1- Escreva testes automatizados para garantir o funcionamento correto da API
+# OK    7.1.2- Criar um arquivo de teste "test/controllers/titles_controller_test.rb" para o controlador "titles_controller"
 #   7.2- Utilizar RSpec ou MiniTest
 #   7.3- Certificar de testar casos de sucesso e de fakha para diferentes funcionalidades da API
 

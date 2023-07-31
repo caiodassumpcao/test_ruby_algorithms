@@ -35,6 +35,8 @@ class TitlesController < ApplicationController
     if params[:country].present?
       @titles = titles.where(country: params[:country])
     end
+
+    render json: @titles.select(:id, :title, :genre, :year, :country, :published_at, :description)
   end
 end
 
