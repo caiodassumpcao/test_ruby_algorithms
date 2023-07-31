@@ -1,8 +1,6 @@
 require 'csv'
 
 class TitlesController < ApplicationController
-  # ...
-
   def import_csv
     csv_file = params[:file]
 
@@ -23,5 +21,31 @@ class TitlesController < ApplicationController
     render json: { message: 'CSV import successful' }
   end
 
-  # ...
+  def index
+    @titles = Titles.all
+
+    if params[:year].present?
+      @titles = titles.where(year: params[:year])
+    end
+
+    if params[:genre].present?
+      @titles = titles.where(genre: params[:genre])
+    end
+
+    if params[:country].present?
+      @titles = titles.where(country: params[:country])
+    end
+
+    render json: @titles.select(:id, :title, :genre, :year, :country, :published_at, :description)
+  end
 end
+
+
+
+
+
+
+
+
+
+

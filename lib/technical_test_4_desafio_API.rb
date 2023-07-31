@@ -33,23 +33,37 @@
 # Etapas:
 # OK 1- Configurar ambiente
 # OK 2- Configurar banco de dados
-# OK 2.1- Configure o arquivo config/database.yml com as informações de conexão do banco de dados escolhido
-# 3- Modelo de dados
-# OK 3.1- Crie um modelo para representar os títulos do Netflix -> você pode criar um arquivo de migração para criar uma tabela "titles" com os campos relevantes, como "id", "title", "genre", "year", "country", "published_at" e "description". Use o comando rails generate migration CreateTitles
-# PD 3.2- Execute o comando "rails db:migrate"
+# OK  2.1- Configure o arquivo config/database.yml com as informações de conexão do banco de dados escolhido
+# OK 3- Modelo de dados
+# OK  3.1- Crie um modelo para representar os títulos do Netflix -> você pode criar um arquivo de migração para criar uma tabela "titles" com os campos relevantes, como "id", "title", "genre", "year", "country", "published_at" e "description". Use o comando rails generate migration CreateTitles
+# OK  3.2- Execute o comando "rails db:migrate"
 # OK 3.3- Defina as validações necessárias para o modelo Title, como a garantia de que não haja duplicidade de registros
-# OK 3.3-> Necessário criar e editar arquivo app/models/title.rb
+# OK  3.3.1-> Necessário criar e editar arquivo app/models/title.rb
+
 # 4- Importação do CSV
-# OK 4.1- Você pode adicionar uma rota no arquivo config/routes.rb, como post '/import', to: 'titles#import_csv'
-# 4.2- Crie um controlador "TitlesController" com uma ação "import_csv" correspondente
-# 4.3- Na ação "import_csv", faça a leitura do arquivo CSV e salve os dados no banco de dados
-# 5- Listagem de titulos
-# 5.1- Crie um endpoint para listar os títulos, seguindo o padrão RESTful. Por exemplo, você pode adicionar uma rota no arquivo config/routes.rb, como get '/titles', to: 'titles#index'.
-# 5.2- Crie uma ação "index" no controlador "TitlesController" correspondente
-# 5.3- Na ação "index", recupere os títulos dos bancos de dados, aplicando as filtragens necessárias (por ano de lançamento, genero, pais, etc)
-# 5.4- Retorne a lista de titulos como resposta, em forma de JSON
-# 6- Testes
-# 6.1- Escreva testes automatizados para garantir o funcionamento correto da API
-# 6.2- Utilizar RSpec ou MiniTest
-# 6.3- Certificar de testar casos de sucesso e de fakha para diferentes funcionalidades da API
+# OK  4.1- Você pode adicionar uma rota no arquivo config/routes.rb, como post '/import', to: 'titles#import_csv'
+# OK  4.2- Crie um controlador "TitlesController" com uma ação "import_csv" correspondente
+# OK  4.3- Na ação "import_csv", faça a leitura do arquivo CSV e salve os dados no banco de dados
+# OK    4.3.1- Formularo HTML no front-end quue permita ao usuario selecionar CSV para enviar
+# OK      4.3.1.1- Criar pasta "title" dentro de "app/views" e criar um arquivo dentro dessa pasta "import_csv.html.erb"
+# OK    4.3.2- Formulario deve enviar uma solicitaçao POST para o endpoint "/imoport" no back-end
+# OK    4.3.3- Verificar se a rota url especificada no arquivo "config/routes.rb" esta recebendo o arquivo CSV definido pela url no formulario Front-end
+# 5- Formulario Front-end
+#   5.1-
+# OK 6- Listagem de titulos
+# OK  6.1- Crie um endpoint para listar os títulos, seguindo o padrão RESTful. Por exemplo, você pode adicionar uma rota no arquivo config/routes.rb, como get '/titles', to: 'titles#index'.
+# OK  6.2- Crie uma ação "index" no controlador "TitlesController" correspondente
+# OK    6.2.1- Definir a açao "index" que busca todos os titulos no banco de dados e armazena em uma variavel de instancia para uso na view
+# OK    6.2.2- Crie a view correspondente a açao "index". Criandondo arquivo "app/views/titles/index.html.erb"
+# OK  6.3- Na ação "index", recupere os títulos dos bancos de dados, aplicando as filtragens necessárias (por ano de lançamento, genero, pais, etc)
+# OK    6.3.1- Verificar se na açao "index" do controlador "titles_controller" tem parametros de filtragem enviados na solicitaçao GET.
+# OK  6.4- Retorne a lista de titulos como resposta, em forma de JSON
+# OK    6.4.1- Usar metodo "render" no "titles_controller" para renderizar a lista como um JSON
+# OK    6.4.2- Ajustar os campos retornados no JSON depois do parametro "render"
+
+# 7- Testes
+#   7.1- Escreva testes automatizados para garantir o funcionamento correto da API
+# OK    7.1.2- Criar um arquivo de teste "test/controllers/titles_controller_test.rb" para o controlador "titles_controller"
+#   7.2- Utilizar RSpec ou MiniTest
+#   7.3- Certificar de testar casos de sucesso e de fakha para diferentes funcionalidades da API
 
