@@ -1,8 +1,6 @@
 require 'csv'
 
 class TitlesController < ApplicationController
-  # ...
-
   def import_csv
     csv_file = params[:file]
 
@@ -22,6 +20,14 @@ class TitlesController < ApplicationController
 
     render json: { message: 'CSV import successful' }
   end
-
-  # ...
 end
+
+
+
+
+
+
+
+
+
+

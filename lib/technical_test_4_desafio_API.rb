@@ -43,23 +43,20 @@
 # 4- Importação do CSV
 # OK  4.1- Você pode adicionar uma rota no arquivo config/routes.rb, como post '/import', to: 'titles#import_csv'
 # OK  4.2- Crie um controlador "TitlesController" com uma ação "import_csv" correspondente
-#   4.3- Na ação "import_csv", faça a leitura do arquivo CSV e salve os dados no banco de dados
-#     4.3.1- Formularo HTML no front-end quue permita ao usuario selecionar CSV para enviar
-#     4.3.2- Formulario deve enviar uma solicitaçao POST para o endpoint "/imoport" no back-end
-# 6- Formulario Front-end
-#   6.1-
-# 5- Listagem de titulos
-#   5.1- Crie um endpoint para listar os títulos, seguindo o padrão RESTful. Por exemplo, você pode adicionar uma rota no arquivo config/routes.rb, como get '/titles', to: 'titles#index'.
-#   5.2- Crie uma ação "index" no controlador "TitlesController" correspondente
-#   5.3- Na ação "index", recupere os títulos dos bancos de dados, aplicando as filtragens necessárias (por ano de lançamento, genero, pais, etc)
-#   5.4- Retorne a lista de titulos como resposta, em forma de JSON
-# 6- Testes
-#   6.1- Escreva testes automatizados para garantir o funcionamento correto da API
-#   6.2- Utilizar RSpec ou MiniTest
-#   6.3- Certificar de testar casos de sucesso e de fakha para diferentes funcionalidades da API
+# OK  4.3- Na ação "import_csv", faça a leitura do arquivo CSV e salve os dados no banco de dados
+# OK    4.3.1- Formularo HTML no front-end quue permita ao usuario selecionar CSV para enviar
+# OK      4.3.1.1- Criar pasta "title" dentro de "app/views" e criar um arquivo dentro dessa pasta "import_csv.html.erb"
+# OK    4.3.2- Formulario deve enviar uma solicitaçao POST para o endpoint "/imoport" no back-end
+# OK    4.3.3- Verificar se a rota url especificada no arquivo "config/routes.rb" esta recebendo o arquivo CSV definido pela url no formulario Front-end
+# 5- Formulario Front-end
+#   5.1-
+# 6- Listagem de titulos
+#   6.1- Crie um endpoint para listar os títulos, seguindo o padrão RESTful. Por exemplo, você pode adicionar uma rota no arquivo config/routes.rb, como get '/titles', to: 'titles#index'.
+#   6.2- Crie uma ação "index" no controlador "TitlesController" correspondente
+#   6.3- Na ação "index", recu pere os títulos dos bancos de dados, aplicando as filtragens necessárias (por ano de lançamento, genero, pais, etc)
+#   6.4- Retorne a lista de titulos como resposta, em forma de JSON
+# 7- Testes
+#   7.1- Escreva testes automatizados para garantir o funcionamento correto da API
+#   7.2- Utilizar RSpec ou MiniTest
+#   7.3- Certificar de testar casos de sucesso e de fakha para diferentes funcionalidades da API
 
-class desafio
-
-end
-
-def teste()
