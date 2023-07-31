@@ -51,9 +51,13 @@
 # 5- Formulario Front-end
 #   5.1-
 # 6- Listagem de titulos
-#   6.1- Crie um endpoint para listar os títulos, seguindo o padrão RESTful. Por exemplo, você pode adicionar uma rota no arquivo config/routes.rb, como get '/titles', to: 'titles#index'.
+# OK  6.1- Crie um endpoint para listar os títulos, seguindo o padrão RESTful. Por exemplo, você pode adicionar uma rota no arquivo config/routes.rb, como get '/titles', to: 'titles#index'.
 #   6.2- Crie uma ação "index" no controlador "TitlesController" correspondente
-#   6.3- Na ação "index", recu pere os títulos dos bancos de dados, aplicando as filtragens necessárias (por ano de lançamento, genero, pais, etc)
+# OK    6.2.1- Definir a açao "index" que busca todos os titulos no banco de dados e armazena em uma variavel de instancia para uso na view
+# OK    6.2.2- Crie a view correspondente a açao "index". Criandondo arquivo "app/views/titles/index.html.erb"
+#   6.3- Na ação "index", recupere os títulos dos bancos de dados, aplicando as filtragens necessárias (por ano de lançamento, genero, pais, etc)
+# OK    6.3.1- Verificar se na açao "index" do controlador "titles_controller" tem parametros de filtragem enviados na solicitaçao GET.
+#     6.3.2-
 #   6.4- Retorne a lista de titulos como resposta, em forma de JSON
 # 7- Testes
 #   7.1- Escreva testes automatizados para garantir o funcionamento correto da API
