@@ -15,8 +15,8 @@
 # Capacities - Capacidade do tanque
 
 
-require ''
-require ''
+require 'rgl/adjacency'
+require 'rgl/flow'
 
 def max_flow_fill_tank(n, s, edges, capacities)
   # Criamos um grafo direcionado para representar a conexão entre os tanques.
@@ -35,11 +35,26 @@ def max_flow_fill_tank(n, s, edges, capacities)
   # Para cada tanque (representado pela sua capacidade) criamos um hash vazio que sera usado para armazenar os fluxos entre os tanques
   capacities.each { |v| flow_hash[v] = Hash.new(0) }
 
-  #
+  # Iniciando variavel que sera usada para armazenar o fluxo total que sai do tanque de origem "s" durante a execuçao do algoritmo
   total_flow = 0
+
+  # Utilizando o metodo FLOW do grafo 'g' para calcular o fluxo maximo do grafo
+  # Determinar o fluxo entre os tanques
   g.flow do |u, v, flow|
+
+    # atualizando o "flow_hash" com os fluxos calculados entre os tanques. Para cada aresta do fluxo maximo, atribuimos o valor do fluxo "flow" no hash "flow_hash"
     flow_hash[u][v] = flow
+
+    # Verifica se o vertice de origem "u" e igual ao vertice de origem fornecido como entrada "s". Se sim, adcionamos o fluxo encontrado a variavel "total_flow"
     total_flow += flow if u == s
   end
 
+  total_flow
 end
+
+N = 4
+S = 1
+Edges = [[1, 2], [1, 3], [2, 4]]
+Cap = [1, 1, 1, 1]
+
+puts max_flow_fill_tank(N, S, Edges, Cap)
