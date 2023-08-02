@@ -15,8 +15,7 @@
 # Capacities - Capacidade do tanque
 
 
-require 'rgl/adjacency'
-require 'rgl/flow'
+require '/home/caiodassumpcao/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/rgl-0.6.6'
 
 def max_flow_fill_tank(n, s, edges, capacities)
   # Criamos um grafo direcionado para representar a conexão entre os tanques.

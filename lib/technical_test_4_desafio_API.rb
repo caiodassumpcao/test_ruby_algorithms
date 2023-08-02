@@ -65,7 +65,7 @@
 # OK  7.1- Escreva testes automatizados para garantir o funcionamento correto da API
 # OK    7.1.2- Criar um arquivo de teste "test/controllers/titles_controller_test.rb" para o controlador "titles_controller"
 # OK  7.2- Utilizar RSpec ou MiniTest
-# PD  7.3- Certificar de testar casos de sucesso e de fakha para diferentes funcionalidades da API
+# ok  7.3- Certificar de testar casos de sucesso e de fakha para diferentes funcionalidades da API
 
 require 'active_record'
 
@@ -75,6 +75,6 @@ ActiveRecord::Base.establish_connection(
   host: 'localhost',
   username: 'root',
   password: 'caitole123',
-  database: 'ruby_teste_4_desafio_API_db'
+  database: 'ruby_teste_4_desafio_API_10_db'
 )
 

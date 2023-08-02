@@ -133,6 +133,7 @@ GEM
     nokogiri (1.15.1)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
+    pairing_heap (3.0.1)
     parallel (1.23.0)
     parser (3.2.2.1)
       ast (~> 2.4.1)
@@ -175,6 +176,10 @@ GEM
     reline (0.3.4)
       io-console (~> 0.5)
     rexml (3.2.5)
+    rgl (0.6.6)
+      pairing_heap (>= 0.3, < 4.0)
+      rexml (~> 3.2, >= 3.2.4)
+      stream (~> 0.5.3)
     rspec-core (3.12.2)
       rspec-support (~> 3.12.0)
     rspec-expectations (3.12.3)
@@ -219,6 +224,7 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
+    stream (0.5.5)
     thor (1.2.2)
     timeout (0.3.2)
     turbo-rails (1.4.0)
@@ -258,6 +264,7 @@ DEPENDENCIES
   mysql2 (~> 0.5.3)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
+  rgl
   rspec-rails
   rubocop
   selenium-webdriver
