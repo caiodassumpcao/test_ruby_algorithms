@@ -11,4 +11,4 @@ def kadane(array)
   return max_far
 end
 
-puts kadane(array, n)
+puts kadane(array)
