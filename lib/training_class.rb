@@ -24,6 +24,7 @@ class Integer
     return self + 1
   end
 end
+puts "Integer"
 puts 3.more
 puts 7.more
 
@@ -104,3 +105,48 @@ instance = MyClass4.new
 puts instance.foo
 instance.foo = 998.4
 puts instance.foo
+
+class MyClass5
+  @@value = 1
+  def add_one
+    @@value= @@value + 1
+  end
+  def value
+    @@value
+  end
+end
+instanceOne = MyClass5.new
+instanceTwo = MyClass5.new
+puts "Myclass5"
+puts instanceOne.value
+instanceOne.add_one
+puts instanceOne.value
+puts instanceTwo.value
+
+class Employee
+  class << self; attr_accessor :instances; end
+  def store
+    self.class.instances ||= []
+    self.class.instances << self
+  end
+
+  def initialize name
+    @name = name
+  end
+end
+class Overhead < Employee; end
+class Programmer < Employee; end
+Overhead.new('Kiokem').store
+Overhead.new('Caio').store
+Programmer.new('Rodrigues').store
+puts "Class Employee"
+puts Overhead.instances.size
+puts Programmer.instances.size
+
+class MyClass6
+  def self.some_method
+    puts "something"
+  end
+end
+puts "MyClass6"
+MyClass6.some_method
