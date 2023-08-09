@@ -26,3 +26,81 @@ class Integer
 end
 puts 3.more
 puts 7.more
+
+class Morango
+  def Morango.color
+    return "Vermelho"
+  end
+  def self.size
+    return "pequeno"
+  end
+
+  class << self
+    def forma
+      return "Conica"
+    end
+  end
+end
+puts Morango.color
+puts Morango.size
+puts Morango.forma
+
+class MyClass
+  @one = 1
+  def do_someting
+    @one = 2
+  end
+  def output
+    puts @one
+  end
+end
+instance = MyClass.new
+instance.output
+instance.do_someting
+instance.output
+
+class MyClass2
+  def initialize
+    @foo = 28
+  end
+  def foo
+    return @foo
+  end
+  def foo=(value)
+    @foo = value
+  end
+end
+
+instance = MyClass2.new
+puts instance.foo
+instance.foo = 999
+puts instance.foo
+
+class MyClass3
+  attr_accessor :foo
+
+  def initialize
+    @foo = 28
+  end
+end
+
+instance = MyClass3.new
+puts instance.foo
+instance.foo = 999
+puts instance.foo
+
+class MyClass4
+  def initialize
+    @foo = 28
+  end
+  def foo
+    return @foo
+  end
+  def foo=(value)
+    @foo = value.round
+  end
+end
+instance = MyClass4.new
+puts instance.foo
+instance.foo = 998.4
+puts instance.foo
