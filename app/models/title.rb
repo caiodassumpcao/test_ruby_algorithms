@@ -1,3 +1,3 @@
-lass Title < ApplicationRecord
+class Title < ApplicationRecord
   validates :title, uniqueness: true
 end

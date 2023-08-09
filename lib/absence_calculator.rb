@@ -6,7 +6,7 @@ ActiveRecord::Base.establish_connection(
   host: 'localhost',
   username: 'root',
   password: 'caitole123',
-  database: 'ruby_absence_calculator_12_db'
+  database: 'ruby_absence_calculator_13_db'
 )
 
 class CreateUsers < ActiveRecord::Migration[7.0]

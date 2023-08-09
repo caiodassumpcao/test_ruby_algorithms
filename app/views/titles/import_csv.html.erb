@@ -1,7 +1,12 @@
-<h1>Import CSV</h1>
-
-<%= form_with url: import_titles_path, local: true, multipart: true do |form| %>
-  <%= form.file_field :file %>
-  <%= form.submit "Import CSV" %>
-<% end %>
-
+<html>
+<head>
+  <title>Import CSV</title>
+</head>
+<body>
+  <h1>Importar CSV</h1>
+  <form action="/import" method="post" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <input type="submit" value="Importar">
+  </form>
+</body>
+</html>

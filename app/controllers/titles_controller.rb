@@ -22,10 +22,10 @@ class TitlesController < ApplicationController
   end
 
   def index
-    @titles = Titles.all
+    @titles = Title.all
 
     if params[:year].present?
-      @titles = titles.where(year: params[:year])
+      @titles = @titles.where(year: params[:year])
     end
 
     if params[:genre].present?
@@ -36,7 +36,7 @@ class TitlesController < ApplicationController
       @titles = titles.where(country: params[:country])
     end
 
-    render json: @titles.select(:id, :title, :genre, :year, :country, :published_at, :description)
+    render json: @titles
   end
 end
 

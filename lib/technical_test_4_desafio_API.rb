@@ -61,9 +61,20 @@
 # OK    6.4.1- Usar metodo "render" no "titles_controller" para renderizar a lista como um JSON
 # OK    6.4.2- Ajustar os campos retornados no JSON depois do parametro "render"
 
-# 7- Testes
-#   7.1- Escreva testes automatizados para garantir o funcionamento correto da API
+# OK 7- Testes
+# OK  7.1- Escreva testes automatizados para garantir o funcionamento correto da API
 # OK    7.1.2- Criar um arquivo de teste "test/controllers/titles_controller_test.rb" para o controlador "titles_controller"
-#   7.2- Utilizar RSpec ou MiniTest
-#   7.3- Certificar de testar casos de sucesso e de fakha para diferentes funcionalidades da API
+# OK  7.2- Utilizar RSpec ou MiniTest
+# ok  7.3- Certificar de testar casos de sucesso e de fakha para diferentes funcionalidades da API
+
+require 'active_record'
+
+# Estabelece conexão com o banco de dados.
+ActiveRecord::Base.establish_connection(
+  adapter: 'mysql2',
+  host: 'localhost',
+  username: 'root',
+  password: 'caitole123',
+  database: 'ruby_teste_4_desafio_API_10_db'
+)
 
