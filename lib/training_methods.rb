@@ -43,28 +43,36 @@ veri_palindr(word)
 puts "Exercicio 3: ARRAY ALEATORIO"
 def array_sort(n)
   array = []
-  while n >= 0
+  while n > 0
     numero_rand = rand(1..999)
-    array += numero_rand
+    array.push(numero_rand)
+    n -= 1
   end
-  puts array
+  array
+end
+
+
+# MAIOR ELEMENTO
+
+def maior_elemento(array)
+  tamanho = array.length
+  maior_num = array[0]
+  for i in 1..(tamanho - 1)
+    if array[i] > maior_num
+      maior_num = array[i]
+    end
+  end
+  maior_num
+  puts "Maior numero e: #{maior_num}"
 end
 
 puts "Digite o tamanho do array: "
 n = gets.chomp.to_i
-array_sort(n)
+random_array = array_sort(n)
+print random_array
+puts " "
 
-# MAIOR ELEMENTO
 puts "Exercicio 4:MAIOR ELEMENTO"
+maior = maior_elemento(random_array)
+puts "Maior elemento do array de #{n} elementos e: #{maior}"
 
-def maior_elemento(array)
-  tamanho = array.length
-  maior_num = 0
-  while tamanho >= 0
-    if array(t - 1) > maior_num
-      maior_num = array(t - 1)
-    end
-    puts "Maior numero e: #{maior_num}"
-  end
-end
-array = []
