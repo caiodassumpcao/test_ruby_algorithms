@@ -76,3 +76,23 @@ puts "Exercicio 4:MAIOR ELEMENTO"
 maior = maior_elemento(random_array)
 puts "Maior elemento do array de #{n} elementos e: #{maior}"
 
+def somatorio_fatorial(n)
+  if n <= 0
+    puts "Numero invalido, digite um numero inteiro positivo"
+    n = gets.chomp.to_i
+  end
+
+  if n > 0
+    soma = 0
+    while n > 0
+      soma += n
+      n -= 1
+    end
+    puts "Somatorio fatorial de #{n}: #{soma}"
+  end
+end
+
+puts "Digite um n°: "
+n = gets.chomp.to_i
+somatorio_fatorial(n)
+
