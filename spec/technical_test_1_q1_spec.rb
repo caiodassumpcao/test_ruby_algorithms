@@ -10,8 +10,21 @@ RSpec.describe '#Palindromos' do
         expect(result).to be true
       end
     end
-    context '' do
+    context 'when the word is not a palindrome' do
+      it 'return false' do
+        palavra = 'Areia'
+        result = verify_palindr(palavra)
 
+        expect(result).to be false
+      end
     end
-  end
+
+    context 'when the word has number' do
+      before do
+        allow_any_instance_of(Kernel).to receive(:gets).and_return("racecar123\n", "racecar\n")
+
+      end
+
+      end
+    end
 end
