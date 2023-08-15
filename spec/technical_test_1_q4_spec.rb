@@ -1,3 +1,4 @@
+require 'rspec'
 require 'technical_test_1_q4'
 
 RSpec.describe 'Biblioteca'
@@ -48,7 +49,14 @@ describe 'Funcionarios ' do
       employee.destroy
       expect(Employee.exists?(employee.id)).to be_falsey
     end
+  end
+  context 'Relacionamento com equipe e cargo' do
+    it 'return a complet name' do
+      team = Team.find_by(:name 'TI')
+      job_title = JobTitle.find_by(name: 'Desenvolvedor')
+    end
 
   end
+
 
 end
