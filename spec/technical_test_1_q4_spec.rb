@@ -53,7 +53,7 @@ RSpec.describe 'Biblioteca' do
 
     context 'Relacionamento com equipe e cargo' do
       it 'return a complet name' do
-        team = Team.find_by(:name 'TI')
+        team = Team.find_by(name: 'TI')
         job_title = JobTitle.find_by(name: 'Desenvolvedor back-and')
         employee = Employee.create(first_name: 'Jack', last_name: 'Dassumpcao', cpf: '123.456.789-00', team: team, job_title: job_title )
         expect(employee.team).to eq(team)
