@@ -23,6 +23,9 @@ RSpec.describe 'Exemplo' do
   end
 
   describe  do
-
+    it 'Imprime a variavel de classe' do
+      expect { Exemplo.metodo_de_classe }.to output("Variavel de clasee\n").to_stdout
+    end
   end
 end
+
