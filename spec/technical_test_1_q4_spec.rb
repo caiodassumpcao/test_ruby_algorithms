@@ -64,7 +64,7 @@ RSpec.describe 'Biblioteca' do
     context 'Metodo full_name' do
       it 'retorna o nome completo do funcionario' do
         employee = Employee.create(first_name: 'Malu', last_name: 'Rodrigues', cpf: '987.654.321-00')
-        expect(employee.full_name)to eq('Malu Rodrigues')
+        expect(employee.full_name).to eq('Malu Rodrigues')
       end
     end
 

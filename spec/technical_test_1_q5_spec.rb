@@ -14,8 +14,17 @@ RSpec.describe 'Biblioteca' do
       end unless  table_exists?(:teams)
 
       create_table :employees, unless_exists: true do |t|
-
-      end
+        t.string :first_name
+        t.string :last_name
+        t.string :cpf
+        t.integer :team_id
+        t.integer :job_title_id
+      end unless table_exists?(:employees)
     end
+
+    Team.create(name: 'TI') unless Team.exists?(name: 'TI')
+    Team.create(name: 'Suporte') unless Team.exists?(name: 'Suporte')
+
+    JobTitle.create(name: 'Desenvolvedor back-end') unless JobTitle.exists?(method_name)
   end
 end
