@@ -6,7 +6,7 @@ RSpec.describe 'Biblioteca' do
   describe 'Funcionarios ' do
     before(:all) do
       ActiveRecord::Base.establish_connection(
-        adapter: 'sqlite3',
+        adapter: 'mysql2',
         database: ':memory'
       )
 
