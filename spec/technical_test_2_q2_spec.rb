@@ -3,37 +3,50 @@ require 'active_record'
 require 'technical_test_2_q2'
 
 RSpec.describe User, type: :model do
-  it 'has a valid name' do
-    user = User.new(name: 'Caio')
-    expect(user.valid?).to be(true)
-  end
-
-  it 'can have multiple event_users' do
-    user = user.new(name: 'Jack')
-    event_user_1 = EventUser.new(user: user)
-    event_user_2 = EventUser.new(user: user)
-
-  end
-
-  describe 'Funcionarios' do
-    before(:all) do
-      ActiveRecord::Base.establish_connection(
-        adapter: 'mysql2',
-        database: ':ruby_teste_2_q21_db'
-      )
-
-      ActiveRecord::Schema.define do
-        create_table :event_users, unless_exist: true do |t|
-          t.string :event_users
-        end unless table_exists?(:event_users)
-
-        create_table :
-      end
-    end
-    context '' do
-
+  context 'Create and associations user' do
+    it 'has a valid name' do
+      user = User.new(name: 'Caio')
+      expect(user.valid?).to be(true)
     end
 
+    it 'can have multiple event_users' do
+      user = User.new(name: 'Jack')
+      event_user_1 = EventUser.new(user: user)
+      event_user_2 = EventUser.new(user: user)
+      user.event_users << event_user_1
+      user.event_users << event_user_2
+      expect(user.event_users.count).to eq(2)
+    end
   end
+end
+
+RSpec.describe Event, type: :model do
+  context 'Create and associations Event' do
+    it 'can have multiple event_users' do
+      event = Event.new(name: 'Conferencia')
+      user_1 = User.new(name: 'Ana')
+      user_2 = User.nre(name: 'Joao')
+      event_user_1 = EventUser.new(user: user_1)
+      event_user_2 = EventUser.new(user: user_2)
+      event.event_users << event_user_1
+      event.event_users << event_user_2
+      expect(event.event_users.count).to eq(2)
+    end
+    it 'can have multiple awards' do
+      event = Event.new(name: 'Congresso')
+      award_1 = Award.new(name: 'First-Place')
+      award_2 = Award.new(name: 'Second-Place')
+      event.awards << award_1
+      event.awards << award_2
+      expect(event.awards.count).to eq(2)
+    end
+  end
+end
+RSpec.describe EventUser, type: :model do
+  context '' do
+
+  end
+end
+RSpec.describe Award, type: :model do
 
 end
