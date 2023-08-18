@@ -25,7 +25,7 @@ RSpec.describe Event, type: :model do
     it 'can have multiple event_users' do
       event = Event.new(name: 'Conferencia')
       user_1 = User.new(name: 'Ana')
-      user_2 = User.nre(name: 'Joao')
+      user_2 = User.new(name: 'Joao')
       event_user_1 = EventUser.new(user: user_1)
       event_user_2 = EventUser.new(user: user_2)
       event.event_users << event_user_1
@@ -49,7 +49,7 @@ RSpec.describe EventUser, type: :model do
       event_user = EventUser.new(user: user)
       expect(event_user.user).to eq(user)
     end
-    it 'beongs to an event' do
+    it 'belongs to an event' do
       event = Event.new(name: 'Conferencia')
       event_user = EventUser.new(event: event)
       expect(event_user.event).to eq(event)

@@ -20,7 +20,6 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :name
       t.integer :age
       t.string :job
-
       t.timestamps
     end
   end
