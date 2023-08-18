@@ -43,10 +43,25 @@ RSpec.describe Event, type: :model do
   end
 end
 RSpec.describe EventUser, type: :model do
-  context '' do
-
+  context 'associations' do
+    it 'belongs to a user' do
+      user = User.new(name: 'Carina')
+      event_user = EventUser.new(user: user)
+      expect(event_user.user).to eq(user)
+    end
+    it 'beongs to an event' do
+      event = Event.new(name: 'Conferencia')
+      event_user = EventUser.new(event: event)
+      expect(event_user.event).to eq(event)
+    end
   end
 end
 RSpec.describe Award, type: :model do
-
+  context 'associations' do
+    it 'belongs to an event' do
+      event = Event.new(name: 'Contest')
+      award = Award.new(name: event)
+      expect(award.event).to eq(event)
+    end
+  end
 end
