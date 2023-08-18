@@ -1,4 +1,5 @@
 require 'rspec-rails'
+require 'active_record'
 require 'technical_test_1_q4'
 
 RSpec.describe 'Biblioteca' do
