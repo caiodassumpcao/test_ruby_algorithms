@@ -17,7 +17,18 @@ RSpec.describe 'solucao' do
     }
 
     expected_output = "Nome:000Maria Neusa, CPF:97905796671, Estado:Sao Paulo        , Valor:001234\n" +
-                  "Nome:000Ricardo Font, CPF:44010762900,  "
-  end
+                  "Nome:000Ricardo Font, CPF:44010762900, Estado:Rio Grande do Sul, Valor:00567"
 
+    expect(format_config(input)).to eq(expected_output)
+  end
+  it 'retorna uma string vazia quando input esta vazio' do
+    input = []
+    format_config = {}
+    expect(format_config(input)).to eq('')
+  end
+  it 'retorna uma string vazia quando nao ha campos definidos no formato' do
+    input = [
+      { name: 'Maria Neusa de Aparecida', cpf: '97905796671', }
+    ]
+  end
 end
