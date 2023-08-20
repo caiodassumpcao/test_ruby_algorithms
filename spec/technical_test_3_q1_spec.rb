@@ -13,4 +13,11 @@ RSpec.describe [CreateUsers, type: :model ] do
 
       expect(solucao(input)).to eq(expected_output)
     end
+
+    it 'retorna uma mensagem de cpf nao preenchido corretamente' do
+      input = [
+        { name: 'Maria Neusa de Aparecida', cpf: '7984561231', state: 'Sao Paulo', value: '1234'}
+      ]
+    end
+
 end

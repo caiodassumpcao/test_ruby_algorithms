@@ -28,7 +28,9 @@ RSpec.describe 'solucao' do
   end
   it 'retorna uma string vazia quando nao ha campos definidos no formato' do
     input = [
-      { name: 'Maria Neusa de Aparecida', cpf: '97905796671', }
+      { name: 'Maria Neusa de Aparecida', cpf: '97905796671', state: 'Sao Paulo', value: '1234' }
     ]
+    format_config = {}
+    expect(format_config(input)).to eq('')
   end
 end

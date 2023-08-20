@@ -25,6 +25,9 @@ def format_string(input)
       value = value.ljust(config['length']) if config['align'] == 'left'
       value = value.ljust(config['length']) if config['align'] == 'right'
       line += value
+      if
+
+      end
     end
     line
   end.join("\n")
