@@ -15,21 +15,6 @@ def maior_valor(lista)
   produtos = lista.keys
   puts produtos
 end
-def menor_valor(lista)
-  prod_menor_valor = lista.min_by { |produto, preco| preco }
-  prod_menor_valor.first
-  valor_frutas = lista.values_at(:banana, :laranja, :uva, :morango)
-  custo_frutas = 0
-  valor_frutas.each do |fruta|
-    custo_frutas += fruta
-  end
-  puts "Custo total das frutas foram: #{custo_frutas}"
-end
-lista = { banana: 2.0, laranja: 1.9, morango: 3.2, uva: 2.5, cafe: 3.3, pizza: 18.9, guarana: 10.5 }
-produto_maior_valor = maior_valor(lista)
-produto_menor_valor = menor_valor(lista)
-
-puts "O maior e menor valor da lista de produtos e respectivamente: #{produto_maior_valor}, #{produto_menor_valor}"
 
 
 def total_vendido(lista_vendas)
