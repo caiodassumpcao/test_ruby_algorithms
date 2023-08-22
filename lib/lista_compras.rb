@@ -37,3 +37,12 @@ end
 
 resultado_filtro = filtro_custo(lista)
 puts "Itens dentro do limite de custo: #{resultado_filtro}"
+
+def return_custo_item(lista)
+  puts "Qual item deseja saber o preço?"
+  iten = gets.chomp.to_i
+  itens_selecionados = lista.values_at(iten)
+  itens_selecionados
+end
+
+return_custo_item(lista)
