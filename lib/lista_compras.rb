@@ -40,9 +40,26 @@ puts "Itens dentro do limite de custo: #{resultado_filtro}"
 
 def return_custo_item(lista)
   puts "Qual item deseja saber o preço?"
-  iten = gets.chomp.to_i
-  itens_selecionados = lista.values_at(iten)
-  itens_selecionados
+  item = gets.chomp.to_sym
+  custo_item = lista[item]
 end
 
-return_custo_item(lista)
+custo_item = return_custo_item(lista)
+puts "O custo do item selecionado e: #{custo_item}"
+
+def verificar_item_presente(lista)
+  puts "Qual item deseja adicionar a lista?"
+  novo_item = gets.chomp.to_sym
+  existe_novo_item = lista.has_key?(novo_item)
+  if existe_novo_item
+    puts "Item ja presente na lista"
+  else
+    puts "Qual valor do item?"
+    custo_novo_item = gets.chomp.to_f
+    lista[novo_item] = custo_novo_item
+    puts "Item #{novo_item} de custo #{custo_novo_item} adicionado a lista de compras"
+  end
+
+end
+
+verificar_item_presente(lista)
