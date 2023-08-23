@@ -63,3 +63,16 @@ def verificar_item_presente(lista)
 end
 
 verificar_item_presente(lista)
+
+def remover_item(lista)
+  puts "Qual item deseja remover da lista"
+  delet_item = gets.chomp.to_sym
+  if lista.has_key?(delet_item)
+    valor_removido = lista.delete(delet_item)
+    puts "Item #{delet_item} de valor #{valor_removido} foi removido da lista"
+  else
+    puts "Item #{delet_item} nao existe na lista"
+  end
+end
+
+remover_item(lista)
