@@ -76,3 +76,25 @@ def remover_item(lista)
 end
 
 remover_item(lista)
+
+def add_item(lista, novos_itens)
+  combo_novos_itens =  lista.merge(novos_itens)
+  puts "Lista de compras atualizadas com os novos itens: #{combo_novos_itens}"
+  lista.each do |item, custo|
+    puts "#{item.capitalize}: R$ #{custo}"
+  end
+end
+
+novos_itens = { vinagre: 6.43, agua: 1.88, ameixa: 4.56, graviola: 100 }
+add_item(lista, novos_itens)
+
+def inflacao(lista)
+  att_inflacao = lista.transform_values { |custo| custo * 1.093 }
+  puts "Lista de preços após a inflação:"
+  att_inflacao.each do |item, custo|
+    puts "#{item.capitalize}: R$ #{custo}"
+  end
+end
+
+"\n"
+inflacao(lista)
