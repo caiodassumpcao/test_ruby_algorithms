@@ -21,6 +21,18 @@ end
 
 puts "Digite seu cpf:"
 cpf_1 = gets.chomp
+puts "CPF formatado: #{remove_special_charac(cpf_1)}"
 
-puts remove_special_charac(cpf_1)
+
+
+
+
+
+
+
+
+
+
+
+
 
