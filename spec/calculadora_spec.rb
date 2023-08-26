@@ -14,7 +14,14 @@ RSpec.describe 'Calculadora' do
       expect(result).to eq(3)
     end
     it 'performs multiplication' do
-      operacoes = { numero1: 2, numero2: 3, operacao: 'multiplicacao'}
+      operacoes = { numero1: 2, numero2: 3, operacao: 'multiplicacao' }
+      result = calculadora(operacoes)
+      expect(result).to eq(6)
+    end
+    it 'performs division' do
+      operacoes = { numero1: 10, numero2: 5, operacao: 'divisao' }
+      result = calculadora(operacoes)
+      expect(result).to eq(2)
     end
   end
 end
