@@ -30,7 +30,7 @@ end
 class User < ApplicationRecord
   scope :materia, -> {
     where("carga_horaria >= 20 AND hora_aula >= 140")
-  }
+  }HELLO
 end
 
 User.create(name: "Maquinas Primarias", carga_horaria: 60, hora_aula: 280)
