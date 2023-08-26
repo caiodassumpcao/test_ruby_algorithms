@@ -33,7 +33,8 @@ RSpec.describe'Block Argument Exemples' do
     end
 
     it 'converts string to downcase a block' do
-      result = alterar_string('HELLO') { |str|}
+      result = alterar_string('WORD') { |str| str.downcase }
+      expect(result).to eq('word')
     end
 
   end
