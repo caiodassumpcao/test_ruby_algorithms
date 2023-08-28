@@ -2,7 +2,11 @@
 require 'rgl/flow'
 def max_flow_fill_tank(n, s, edges, capacities)
   g = RGL::DirectedAdjacencyGraph.new
+
+  #Adicionar vertices ao grafo com as respectivas capacidades
   capacities.each { |c| g.add_vertex(c) }
+
+  #Adicionar arestas ao grafo
   edges.each { |u, v| g.add_edge(u, v) }
 
   flow_hash = {}
