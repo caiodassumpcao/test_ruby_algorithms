@@ -1,10 +1,16 @@
 def formate_cpf(cpf)
-  cpf = cpf.gsub(/(\d{3})(\d{3})(\d{3})(\d{2})/, '\1.\2.\3-\4')
+  tamanho_cpf = cpf.length
+  if tamanho_cpf == 11
+    cpf = cpf.gsub(/(\d{3})(\d{3})(\d{3})(\d{2})/, '\1.\2.\3-\4')
+  else
+    puts "CPF invalido, digite o cpf novamente!"
+  end
 end
 
 def contagem_charac(cpf)
-  #O * após o conjunto de caracteres permite que ele se repita zero ou mais vezes.
-  !(cpf =~ /^[0-9\s]*$/)
+
+  #Aqui verificamos se o caractere e um digito ou espaco em branco
+  char =~ /[0-9]\s]/
 end
 
 def remove_special_charac(cpf)
