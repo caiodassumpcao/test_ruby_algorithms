@@ -23,5 +23,15 @@ RSpec.describe 'Calculadora' do
       result = calculadora(operacoes)
       expect(result).to eq(2)
     end
+    it 'performs exponentiation' do
+      operacoes = { numero1:10, numero2: 2, operacao: 'exponenciacao' }
+      result = calculadora(operacoes)
+      expect(result).to eq(100)
+    end
+    it 'returns "Operacao Invalida" for invalid operations' do
+      operacoes = { numero1: 2, numero2: 3, operacao: 'potencia' }
+      result = calculadora(operacoes)
+      expect(result).to eq('Operacao invalida')
+    end
   end
 end
