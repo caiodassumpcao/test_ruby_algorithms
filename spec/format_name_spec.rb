@@ -16,5 +16,12 @@ RSpec.describe '#formate_name' do
 
       expect(result).to eq('Shelby, Thomy')
     end
+
+    it 'formats another name' do
+      opcoes = { primeiro_nome: 'Jack', segundo_nome: 'Rodrigues' }
+      result = formate_name(opcoes)
+
+      expect(result).to eq('Rodrigues, Jack')
+    end
   end
 end
