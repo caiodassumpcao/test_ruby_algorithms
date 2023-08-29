@@ -30,5 +30,36 @@ def file_reading()
 
   rescue Errno:ENOENT
   puts "Erro: O arquivo '#{file_name}' nao foi encontrado"
+  rescue => e
+    puts "Erro: #{e.message}"
+  ensure
+    file.close if file
   end
+end
+
+puts "Funçao: File Reading"
+file_reading()
+
+def guess_number(target)
+  puts "Tente adivinhar o numero entre 1 e 100:"
+  guess = gets.chomp.to_i
+
+  if guess == target
+    puts "Parabens voce acertou o numero!"
+  elsif guess > target
+    puts "Dica: O numero e menor que #{guess}"
+    guess_number(target)
+  else guess < target
+    puts "Dica: O numero e maior que #{guess}"
+    guess_number(target)
+  end
+end
+begin
+  target_number = rand(1..100)
+  guess_number(target_number)
+
+rescue ArgumentError
+  puts "Erro: Palpite invalido. Digite um numero."
+rescue => e
+  puts "Erro: #{e.message}"
 end
