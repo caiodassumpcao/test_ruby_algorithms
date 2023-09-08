@@ -1,30 +1,49 @@
 require 'mysql2'
-cliente = Mysql2::Client.new(host: 'Localhost', username: )
-def contagem_drink(bebidas)
-  bebidas = { cerveja: 5, vodka: 30, whisk: 50, gin: 45 }
-  puts "Escolha a bebida: "
-  escolha = gets.chomp
+client = Mysql2::Client.new(host: 'localhost', username: 'root', password: 'caitole123', database: 'count_drinks_db')
 
-end
-
-class Bebidas
-  @custo_bebida = 0
-  def cerveja
-    @custo_bebda = 5.0
-    return @custo_bebda
-  end
-  def vodka
-    @custo_bebda = 30.0
-    return @custo_bebda
-  end
-  def whisk
-    @custo_bebda = 60.0
-    return @custo_bebda
-  end
-  def gin
-    @custo_bebda = 45.0
-    return @custo_bebda
+def listar_bebidas(client)
+  puts "Lista de bebidas: "
+  result = client.query("SELECT * FROM bebidas")
+  result.each do |row|
+    puts "#{row['id']}. #{row['name']} - R$: #{row['valor']}"
   end
 end
 
-def contagem
+def criar_conta(client)
+  puts "Digite o nome do participante:"
+  nome = gets.chomp
+
+  client.query("INSERT INTO participantes (nome) VALUES ('#{nome}')")
+  puts "#{nome} foi adicionado a conta"
+end
+
+def adicionar_bebidas(client)
+  listar_bebidas(client)
+  puts "Escolha uma bebida (digite o numero):"
+  bebida_id = gets.chomp.to_i
+  bebida = client.query("SELECT * FROM bebidas =  #{bebida_id}").first
+  if bebida
+    puts "Quem vai tomar a bebida?"
+    participamte_name = gets.chomp
+    participante = client.query("SELECT * FROM participantes WHERE nome = '#(participante_name'").first
+    if participante
+      client.query("INSERT INTO atribuicoes (participante_id, bebida_id) VALUES (#{participante['id']}, #{bebida_id})")
+      puts "#{bebida['nome']} foi adicionado a conta de #{participante['nome']}"
+    else
+      puts "Participante nao encontrado"
+    end
+  else
+    puts "Bebida nao encontrada"
+  end
+end
+
+def mostrar_conta(client)
+  puts "Conta:"
+  result = client.query("SELECT p.nome. SUM(b.vaçpr) AS total FROM participantes p
+                        JOIN atribuicoes a ON p.id = a.participante_id
+                        JOIN bebidas b ON a.bebida_id = b.id
+                        GROUP BY p.nome")
+  result.each do |row|
+    puts "#{row['nome']} deve pagar"
+  end
+end
