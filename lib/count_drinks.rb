@@ -1,4 +1,5 @@
-
+require 'mysql2'
+cliente = Mysql2::Client.new(host: 'Localhost', username: )
 def contagem_drink(bebidas)
   bebidas = { cerveja: 5, vodka: 30, whisk: 50, gin: 45 }
   puts "Escolha a bebida: "
