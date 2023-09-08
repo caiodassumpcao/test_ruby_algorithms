@@ -11,3 +11,5 @@ def cadastro()
   puts "Cadastro realizado: #{name_user} #{last_name_user}, #{age_user} years"
 end
 cadastro()
+
+def teste ()
