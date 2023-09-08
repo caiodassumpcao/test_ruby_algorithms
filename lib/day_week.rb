@@ -15,8 +15,8 @@ def day_of_week(y, m, d)
   return (y + y / 4 - y / 100 + y / 400 + t[m - 1] + d) % 7
 end
 
-day = 13
-month = 3
+day = 7
+month = 9
 year = 2023
 
 
