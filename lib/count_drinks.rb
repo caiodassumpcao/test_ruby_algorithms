@@ -44,6 +44,29 @@ def mostrar_conta(client)
                         JOIN bebidas b ON a.bebida_id = b.id
                         GROUP BY p.nome")
   result.each do |row|
-    puts "#{row['nome']} deve pagar"
+    puts "#{row['nome']} deve pagar R$: #{row['total']}"
   end
 end
+
+loop do
+  puts ""
+  puts ""
+  puts ""
+  puts ""
+  puts ""
+  escolha = gets.chomp.to_i
+
+  case escolha
+  when 1
+    criar_conta(client)
+  when 2
+    adicionar_bebidas(client)
+  when 3
+    mostrar_conta(client)
+  when 4
+    puts "Saindo do aplicativo"
+    break
+    else puts "Opçao invalida"
+  end
+end
+
