@@ -20,7 +20,7 @@ class TFTProbabilidade
       8 => { 1 => 0.15, 2 => 0.2, 3 => 0.35, 4 => 0.24, 5 => 0.06 },
       9 => { 1 => 0.1, 2 => 0.15, 3 => 0.3, 4 => 0.3, 5 => 0.15 }
     }
-  end
+  enddasdas
   def calcular_probabilidade(nivel, custo, quantidade_tabuleiro)
     nivel = nivel.clamp(1, 9)
     custo = custo.clamp(1, 5)
