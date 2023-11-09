@@ -75,6 +75,9 @@ ActiveRecord::Base.establish_connection(
   host: 'localhost',
   username: 'root',
   password: 'caitole123',
-  database: 'ruby_teste_4_desafio_API_10_db'
+  database: 'ruby_teste_4_desafio_API'
 )
+
+
+
 
