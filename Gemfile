@@ -45,9 +45,7 @@ gem "bootsnap", require: false
 gem "rgl"
 # Use Sass to process CSS
 # gem "sassc-rails"
-gem "activerecord"
-gem "mysql2", "~> 0.5.5"
-# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
+gem "activerecord" # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
