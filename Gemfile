@@ -46,7 +46,7 @@ gem "rgl"
 # Use Sass to process CSS
 # gem "sassc-rails"
 gem "activerecord"
-gem "mysql2", "~> 0.5.3"
+gem "mysql2", "~> 0.5.5"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 

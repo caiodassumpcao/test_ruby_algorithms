@@ -5,7 +5,9 @@
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$/../../ruby-2.7.8&quot;/Library/Homebrew/utils" />
+    <orderEntry type="jdk" jdkName="asdf: 2.7.8" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v2.4.21, asdf: 2.7.8) [gem]" level="application" />
   </component>
   <component name="RubyModuleProperties">
     <option name="autoCreated" value="true" />
